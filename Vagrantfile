@@ -13,14 +13,14 @@ Vagrant.configure("2") do |config|
   config.vm.define "nginx" do |app|
     app.vm.hostname = "nginx"
     #app.vm.network "public_network"
-    app.vm.network "private_network", ip: "192.168.33.10"
+    app.vm.network "private_network", ip: "192.168.33.30"
     app.vm.provision "shell", path: "provision/provision-for-nginx.sh"
   end
   # Load mysql
   config.vm.define "mysql" do |app|
     app.vm.hostname = "mysql"
     #app.vm.network "public_network"
-    app.vm.network "private_network", ip: "192.168.33.11"
+    app.vm.network "private_network", ip: "192.168.33.31"
     app.vm.provision "shell", path: "provision/provision-for-mysql.sh"
   end
 end

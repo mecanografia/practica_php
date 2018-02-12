@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Ejercicio 12</title>
+    <title>Ejercicio 11</title>
 </head>
 <body>
 <form method="get">
@@ -41,31 +41,26 @@ for ($i = 0; $i < $numero_monedas; $i++) {
     $monedas[$i] = rand(0,1);
 }
 
+$images = array();
+$images ["dolar"]["cara"] = "images/cara_dolar.jpg";
+$images ["dolar"]["cruz"] = "images/cruz_dolar.jpg";
+$images ["euro"]["cara"] = "images/cara_euro.jpg";
+$images ["euro"]["cruz"] = "images/cruz_euro.jpg";
+$images ["yen"]["cara"] = "images/cara_yen.png";
+$images ["yen"]["cruz"] = "images/cruz_yen.jpg";
+$images ["libra"]["cara"] = "images/cara_libra.jpg";
+$images ["libra"]["cruz"] = "images/cruz_libra.jpg";
+$images ["franco"]["cara"] = "images/cara_franco.jpg";
+$images ["franco"]["cruz"] = "images/cruz_franco.jpg";
+
+/*
+print "<img src=\"images/cara_franco.jpg\">";
+*/
 for ($i = 0; $i < $numero_monedas; $i++){
     if ($monedas[$i] == 0){
-         if ($tipo_moneda == "dolar"){
-            print "<img src=\"images/cara_dolar.jpg\">";
-        } else if ($tipo_moneda == "euro"){
-            print "<img src=\"images/cara_euro.jpg\">";
-        } else if ($tipo_moneda == "yen"){
-            print "<img src=\"images/cara_yen.png\">";
-        } else if ($tipo_moneda == "libra"){
-            print "<img src=\"images/cara_libra.jpg\">";
-        } else if ($tipo_moneda == "franco"){
-            print "<img src=\"images/cara_franco.jpg\">";
-        } 
+        echo "<img src=\"".$images[$tipo_moneda]["cara"]."\">";
     } else {
-        if ($tipo_moneda == "dolar"){
-            print "<img src=\"images/cruz_dolar.jpg\">";
-        } else if ($tipo_moneda == "euro"){
-            print "<img src=\"images/cara_euro.jpg\">";
-        } else if ($tipo_moneda == "yen"){
-            print "<img src=\"images/cara_yen.jpg\">";
-        } else if ($tipo_moneda == "libra"){
-            print "<img src=\"images/cara_libra.jpg\">";
-        } else if ($tipo_moneda == "franco"){
-            print "<img src=\"images/cara_franco.jpg\">";
-        }
+        echo "<img src=\"".$images[$tipo_moneda]["cruz"]."\">";
     }
 }
 ?>

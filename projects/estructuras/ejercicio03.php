@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Ejercicio 03</title>
+    <title>Dias</title>
 </head>
 <body>
 <form  method="get">
     <div>
         <label for="dia">Introduce un dia: </label>
-        <input type="number" min="1" max="7" name="dia" value="1">
+        <input type="int" name="dia">
     </div>
     <br>
     <input type="submit" value="Enviar"></input>
@@ -17,14 +17,34 @@
 
 $dia = $_GET["dia"];
 
-if (isset ($dia)) {
-    echo "<h1>Día: $dia</h1>";
-
- swith ($dia) {
+ switch ($dia) {
     case 1:
-    echo "Lunes";
-    break;
-}
+        echo "Lunes";
+        break;
+
+    case 2:
+        echo "Martes";
+        break;
+
+    case 3:
+        echo "Miercoles";
+        break;
+
+    case 4:
+        echo "Jueves";
+        break;
+
+    case 5:
+        echo "Viernes";
+        break;
+
+    case 6:
+        echo "Sabado";
+        break;
+    
+    case 7:
+        echo "Domingo";
+        break;
 }
 ?>
 </body>

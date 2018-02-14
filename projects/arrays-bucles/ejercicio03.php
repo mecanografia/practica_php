@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Ejercicio 03</title>
+    <title>Temperaturas</title>
 </head>
 <body>
 <form  method="get">

@@ -17,7 +17,7 @@
 
 $numero_elementos = $_GET ["numero_elementos"];
 
-// if (!isset($numero_elementos) && is_empty($numero_elementos)) die;
+if (!isset($numero_elementos) || empty($numero_elementos)) die;
 
 $tmeperaturas = array();
 
@@ -39,6 +39,7 @@ echo "<h4>Media: $media</h4>";
 echo "<pre>";
 print_r($temperaturas);
 echo "</pre>"
+
 ?>
 </body>
 </html>

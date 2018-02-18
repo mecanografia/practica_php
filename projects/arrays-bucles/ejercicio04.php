@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Temperaturas </title>
+    <title>Temperaturas</title>
 </head>
 <body>
 <form  method="get">
@@ -14,40 +14,36 @@
     <input type="submit" value="Enviar"></input>
 </form>
 <?php
-
 $numero_elementos = $_GET ["numero_elementos"];
-
-if (!isset($numero_elementos) || empty($numero_elementos)) die;
-
 $temperaturas = array();
-
-// Inicializo el array de temperaturas
+// Inicializamos el array de temperaturas
 for ($i = 0; $i < $numero_elementos; $i++){
     $temperaturas[$i] = rand(1,30);
 }
-
-$suma = 0;
-// Calculo la media
-for ($i = 0; $i < $numero_elementos; $i++){
-    $suma = $suma + $temperaturas[$i];
-}
-
-$media = $suma / $numero_elementos;
-
 echo "<pre>";
 print_r($temperaturas);
 echo "</pre>";
-
-for ($i = 0; $i < $numero_elementos; $i++){
-    $maximo = max($temperaturas);
+$temp = array();
+$contador = 0;
+foreach ($temperaturas as &$valor) {
+    $temp = $temp + $valor;
 }
-
-for ($i = 0; $i < $numero_elementos; $i++){
-    $minimo = min ($temperaturas);
+$media = $temp / $numero_elementos;
+foreach ($temperaturas as &$valor) {
+    $temp[$contador] = $valor;
+    $contador++;
 }
 echo "<h4>Media: $media</h4>";
-echo "<h4>Maximo: $maximo</h4>";
-echo "<h4>Minimo: $minimo</h4>";
+//Minima
+$minima = min($temp);
+//Maxima
+$maxima = max($temp);
+echo "<br>";
+echo "<br>";
+print_r($minima);
+echo "<br>";
+echo "<br>";
+print_r($maxima);
 ?>
 </body>
 </html>

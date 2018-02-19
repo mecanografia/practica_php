@@ -16,6 +16,7 @@
 <?php
 $numero_elementos = $_GET ["numero_elementos"];
 $temperaturas = array();
+// Inicializamos el array de temperaturas
 for ($i = 0; $i < $numero_elementos; $i++){
     $temperaturas[$i] = rand(1,30);
 }
@@ -23,24 +24,32 @@ echo "<pre>";
 print_r($temperaturas);
 echo "</pre>";
 
-$tempe = 0;
-foreach ($temperaturas as &$valor) {
-    $tempe = $tempe + $valor;
-}
+$temp = 0.0;
+$i = 0;
 
-$temp = array();
-$contador = 0;
-foreach ($temperaturas as &$valor) {
-    $temp[$contador] = $valor;
-    $contador++;
-}
-$media = $tempe / $numero_elementos;
-$minima = min($temp);
-$maxima = max($temp);
+do {
+    $temp = $temp + $temperaturas[$i];
+    $i++;
+} while ($i < $numero_elementos);
 
-echo "<h4>Media: $media</h4>";
-echo "<h4>Maximo: $maxima</h4>";
-echo "<h4>Minimo: $minima</h4>";
+$media = $temp / $numero_elementos;
+print_r($media);
+
+do {
+    $maxima = max($temperaturas);
+    $i++;
+} while ($i < $numero_elementos);
+echo "<br>";
+echo "<br>";
+print_r($maxima);
+
+do {
+    $minima = min($temperaturas);
+    $i++;
+} while ($i < $numero_elementos);
+echo "<br>";
+echo "<br>";
+print_r($minima);
 ?>
 </body>
 </html>

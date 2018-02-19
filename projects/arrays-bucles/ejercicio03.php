@@ -38,13 +38,31 @@ echo "<pre>";
 print_r($temperaturas);
 echo "</pre>";
 
+// Calculo de la temperatura maxima con if
+$maximo = $temperaturas[0];
+for ($i = 1; $i < $numero_elementos; $i++) {
+    if ($temperaturas[$i] > $maximo) {
+        $maximo = $temperaturas[$i];
+    }
+}
+// Calculo de la temperatura minima con if
+$minimo = $temperaturas[0];
+for ($i = 1; $i < $numero_elementos; $i++) {
+    if ($temperaturas[$i] < $minimo) {
+        $minimo = $temperaturas[$i];
+    }
+}
+/*
+// Calculo de la temperatura maxima con la funcion max
 for ($i = 0; $i < $numero_elementos; $i++){
     $maximo = max($temperaturas);
 }
 
+// Calculo de la temperatura minima con la funcion min
 for ($i = 0; $i < $numero_elementos; $i++){
     $minimo = min ($temperaturas);
 }
+*/
 echo "<h4>Media: $media</h4>";
 echo "<h4>Maximo: $maximo</h4>";
 echo "<h4>Minimo: $minimo</h4>";

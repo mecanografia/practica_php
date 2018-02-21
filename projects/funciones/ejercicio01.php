@@ -16,8 +16,4 @@ function imprimir_tabla_multiplicar ($numero) {
     }
 } 
 
-
-
-
-
 ?>

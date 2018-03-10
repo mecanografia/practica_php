@@ -39,7 +39,7 @@ $max = $_GET["max"];
 function inicializar_array ($numero_elementos, $min, $max) {
     $listas = array();
     for ($i = 0; $i < $numero_elementos; $i++) {
-        $listas[$i] = rand($min, $max);
+        $listas[$i] = rand(1, 50);
     }
     return $listas;
 }
@@ -47,8 +47,10 @@ function inicializar_array ($numero_elementos, $min, $max) {
 function calcular_maxima ($listas) {
     $max = 0;
     $numeros = count($listas);
-    for ($i = 0; $i < $numeros; $i++) {
-        if ($max )
+    for ($i = 0; $i < $numero_elementos; $i++) {
+        if ($max < $listas[$i]) {
+            $mas = $listas[$i];
+        }
     }
     $media = $suma / $numeros;
     return $media;
@@ -58,6 +60,7 @@ function calcular_maxima ($listas) {
 $listaA = inicializar_array($numero_elementos, $min, $max);
 $media = calcular_media($listaA);
 echo "<pre>";
+print_r($listaA);
 print_r($media);
 echo "</pre>";
 ?>
